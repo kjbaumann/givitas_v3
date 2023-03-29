@@ -1,2 +1,26 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-fluid">
+<h1 style="margin-top: 30px;">Upcoming Events</h1>
+  <div class="row">
+    <% @events.each do |event| %>
+      <div class="col-md-6 col-sm-6 col-lg-3 event-container">
+        <div class="card" style="width: 18rem;">
+          <img src=<%= event.organization.image %> class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= event.name%></h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= event.location%></li>
+            <li class="list-group-item"><%= event.date%></li>
+          </ul>
+          <div class="card-body">
+            <% if  check_reservation(event)-%>
+              <a href="events/<%=event.id%>">Learn More</a>
+            <% else %>
+              <a href="events/<%=event.id%>">Learn More</a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
