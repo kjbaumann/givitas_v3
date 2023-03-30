@@ -23,7 +23,7 @@
     <div class="reservations-container">
       <% @event.reservations.each do |reservation|%>
         <ul class="list-group list-group-horizontal">
-          <li class="list-group-item"><%= reservation.user.frist_name%></li>
+          <li class="list-group-item"><%= reservation.user.first_name%></li>
           <li class="list-group-item"><%= reservation.user.last_name%></li>
           <li class="list-group-item"><%= reservation.user.email%></li>
         </ul>
