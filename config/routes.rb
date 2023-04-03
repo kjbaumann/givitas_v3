@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get "events/:id/reservations/new", to: "pages#new_reservation"
 
+  get "feedbacks/new", to: "pages#new_feedback"
+
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

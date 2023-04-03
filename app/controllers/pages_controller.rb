@@ -30,4 +30,8 @@ class PagesController < ApplicationController
     return has_reservation
   end
   helper_method :check_reservation
+
+  def new_feedback
+
+  end
 end
