@@ -12,10 +12,13 @@ class PagesController < ApplicationController
   end
 
   def new_reservation
+    @user = current_user
     reservation = Reservation.new
     reservation.user = current_user
     reservation.event = Event.find(params[:id])
     reservation.save!
+    # Sends email to user
+    UserMailer.with(user: @user).reservation_email.deliver_now
   end
   helper_method :new_reservation
 
